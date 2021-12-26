@@ -2,13 +2,13 @@ tempSum = 0
 numOfCells = 0
 
 function countAvgTemp(r::Robot)
-    dir = Ost
-    move_while_can!(r, dir)
-    dir = inverse(dir)
+    side = Ost
+    move_while_can!(r,side)
+    side = inverse(side)
     while !isborder(r,Nord)
       move!(r, Nord)
-      move_while_can!(r, dir)
-      dir = inverse(dir)
+      move_while_can!(r, side)
+      side = inverse(dir)
     end
     if numOfCells > 0 
         return tempSum/numOfCells
